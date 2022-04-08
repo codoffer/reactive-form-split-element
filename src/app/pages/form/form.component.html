@@ -1,0 +1,11 @@
+<div class="container">
+  <form [formGroup]="lrForm" (ngSubmit)="onSubmit()" class="lrForm" align="center">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder=" Please enter your name." formControlName="name" required />
+      </mat-form-field>
+    </div>
+    <button type=" submit" mat-button color="primary">Submit</button>
+  </form>
+</div>
