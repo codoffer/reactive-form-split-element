@@ -9,12 +9,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 import { LRFormComponent } from './pages/form/form.component';
-
+import { InputComponent } from './pages/form/input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LRFormComponent
+    LRFormComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,

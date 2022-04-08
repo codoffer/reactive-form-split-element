@@ -1,0 +1,5 @@
+<mat-form-field [formGroup]="lrForm" appearance="fill">
+  <mat-label>Name</mat-label>
+  <input matInput [formControlName]="'name'" placeholder=" Please enter your name." required />
+  <p *ngIf="error">{{error}}</p>
+</mat-form-field>

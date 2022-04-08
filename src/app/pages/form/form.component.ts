@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-lr-form',
@@ -8,11 +8,17 @@ import { FormBuilder } from '@angular/forms';
 })
 export class LRFormComponent implements OnInit {
 
+  errors: any = {}
+  isFormValidated: boolean = false
+
   lrForm = this._fb.group({
-    name: ''
+    name: ['', [Validators.required]],
   })
 
   constructor(private _fb: FormBuilder) {
+    this.errors = {
+      name: 'Please enter your name.'
+    }
   }
 
   get f() {
@@ -24,7 +30,10 @@ export class LRFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.lrForm.valid) {
+      this.isFormValidated = false;
       console.log(this.lrForm.value)
+    } else {
+      this.isFormValidated = true;
     }
 
   }
